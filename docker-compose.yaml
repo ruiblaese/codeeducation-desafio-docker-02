@@ -4,8 +4,8 @@ services:
 
   app:
     build: node
-    container_name: app
-    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s node /usr/src/app/index.js
+    container_name: app    
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s ./commands.sh
     networks: 
       - node-network
     volumes: 
